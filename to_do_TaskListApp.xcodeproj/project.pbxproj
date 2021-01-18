@@ -14,6 +14,7 @@
 		8251E80F25B5049000B2E062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8251E80E25B5049000B2E062 /* Assets.xcassets */; };
 		8251E81225B5049000B2E062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8251E81025B5049000B2E062 /* LaunchScreen.storyboard */; };
 		8251E81B25B5065200B2E062 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251E81A25B5065200B2E062 /* TaskCell.swift */; };
+		8251E81E25B5243800B2E062 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251E81D25B5243800B2E062 /* AddTaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8251E81125B5049000B2E062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8251E81325B5049000B2E062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8251E81A25B5065200B2E062 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		8251E81D25B5243800B2E062 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 				8251E80725B5048C00B2E062 /* SceneDelegate.swift */,
 				8251E80925B5048C00B2E062 /* ViewController.swift */,
 				8251E80B25B5048C00B2E062 /* Main.storyboard */,
+				8251E81A25B5065200B2E062 /* TaskCell.swift */,
+				8251E81D25B5243800B2E062 /* AddTaskController.swift */,
 				8251E80E25B5049000B2E062 /* Assets.xcassets */,
 				8251E81025B5049000B2E062 /* LaunchScreen.storyboard */,
 				8251E81325B5049000B2E062 /* Info.plist */,
-				8251E81A25B5065200B2E062 /* TaskCell.swift */,
 			);
 			path = to_do_TaskListApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8251E81B25B5065200B2E062 /* TaskCell.swift in Sources */,
+				8251E81E25B5243800B2E062 /* AddTaskController.swift in Sources */,
 				8251E80A25B5048C00B2E062 /* ViewController.swift in Sources */,
 				8251E80625B5048C00B2E062 /* AppDelegate.swift in Sources */,
 				8251E80825B5048C00B2E062 /* SceneDelegate.swift in Sources */,

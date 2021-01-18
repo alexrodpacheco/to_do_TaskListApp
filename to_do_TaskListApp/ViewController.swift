@@ -7,9 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask {
+   
     var tasks: [Task] = []
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         
@@ -32,8 +34,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.checkedBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxOUTLINE"), for: UIControl.State.normal)
         }
         
-        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddTaskController
+        vc.delegate = self
+    }
+    
+    func AddTask(name: String) {
+        tasks.append(Task(name: name))
+        tableView.reloadData()
     }
     
     class Task {
