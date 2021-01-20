@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask, ChangeButton {
    
     var tasks: [Task] = []
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
         
         cell.taskNameLabel.text = tasks[indexPath.row].name
         
@@ -33,6 +33,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             cell.checkedBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxOUTLINE"), for: UIControl.State.normal)
         }
+        
+        cell.delegate = self
+        cell.indexP = indexPath.row
+        cell.tasks = tasks
         
         return cell
     }
@@ -47,15 +51,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
-    class Task {
-        var name: String = ""
-        var check: Bool = false
-        
-        convenience init(name: String) {
-            self.init()
-            self.name = name
-        }
+    func changebutton(checked: Bool, index: Int) {
+        tasks[index].check = checked
+        tableView.reloadData()
     }
-
+    
 }
 
+class Task {
+    var name: String = ""
+    var check: Bool = false
+    
+    convenience init(name: String) {
+        self.init()
+        self.name = name
+    }
+}

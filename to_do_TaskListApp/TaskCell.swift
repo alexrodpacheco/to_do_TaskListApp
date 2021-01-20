@@ -7,12 +7,27 @@
 
 import UIKit
 
-class TaskCell: UITableViewCell {
+protocol ChangeButton {
+    func changebutton(checked: Bool, index: Int)
+}
 
+class TaskCell: UITableViewCell {
+    
+    @IBAction func taskButtonPressed(_ sender: Any) {
+        if tasks![indexP!].check {
+            delegate?.changebutton(checked: false, index: indexP!)
+        } else {
+            delegate?.changebutton(checked: true, index: indexP!)
+        }
+    }
     
     @IBOutlet weak var checkedBoxOutlet: UIButton!
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBAction func taskButtonPressed(_ sender: Any) {
-    }
-    
+
+    var delegate: ChangeButton?
+    var indexP: Int?
+    var tasks: [Task]?
 }
+
+
+
